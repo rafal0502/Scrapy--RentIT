@@ -11,9 +11,8 @@ class RentitSpider(scrapy.Spider):
     def parse(self, response):
         mieszkania = response.xpath('//h3/a/@href').extract()
         for mieszkanie in mieszkania:
-            yield Request(mieszkanie,callback=self.parse_flat)
+            yield Request(mieszkanie, callback=self.parse_flat)
 
-        
         # next_page_url = response.xpath('//a[text()="Następna"]/@href').extract_first()
         # yield Request(next_page_url)
 
@@ -34,11 +33,12 @@ class RentitSpider(scrapy.Spider):
         czynsz = response.xpath('//*[@class="sub-list"]//li//text()')[15].extract()
         forma_wlasnosci = response.xpath('//*[@class="sub-list"]//li//text()')[17].extract()
         zdjecia = response.xpath('//*[@class="col-md-offer-content"]//img/@src')[:5].extract()
+        wspolrzedne_lat = response.xpath('//*[@class="ad-map-element"]//@data-lat').extract_first()
+        wspolrzedne_lon = response.xpath('//*[@class="ad-map-element"]//@data-lon').extract_first()
         informacje = response.xpath('//*[@class="dotted-list"]//li//text()').extract()
         informacje_dodatkowe = ''.join(informacje)
         opis = response.xpath('//*[@itemprop="description"]//p//text()').extract()
         opis_finalny = ''.join(opis)
-
 
         yield {
             'tytul': tytul,
@@ -55,8 +55,10 @@ class RentitSpider(scrapy.Spider):
             'rok_budowy': rok_budowy,
             'stan_wykonczenia':  stan_wykonczenia,
             'czynsz': czynsz,
-            'forma_wlasnosci': forma_wlasnosci,  
+            'forma_wlasnosci': forma_wlasnosci,
             'zdjecia': zdjecia,
             'informacje_dodatkowe': informacje_dodatkowe,
             'opis_finalny': opis_finalny,
+            'wspolrzedne_lat': wspolrzedne_lat,
+            'wspolrzedne_lon': wspolrzedne_lon,
         }
