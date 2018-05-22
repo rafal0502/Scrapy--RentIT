@@ -14,6 +14,7 @@ BOT_NAME = 'RentIT_crawler'
 SPIDER_MODULES = ['RentIT_crawler.spiders']
 NEWSPIDER_MODULE = 'RentIT_crawler.spiders'
 
+
 FEED_FORMAT = "json"
 FEED_URI = "./flats_data.json"
 
