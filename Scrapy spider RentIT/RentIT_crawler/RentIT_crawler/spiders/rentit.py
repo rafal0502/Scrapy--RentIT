@@ -3,7 +3,6 @@ import scrapy
 from scrapy.http import Request
 
 
-
 class RentitSpider(scrapy.Spider):
     name = 'rentit'
     allowed_domains = ['otodom.pl']
