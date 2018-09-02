@@ -15,8 +15,8 @@ SPIDER_MODULES = ['RentIT_crawler.spiders']
 NEWSPIDER_MODULE = 'RentIT_crawler.spiders'
 
 
-FEED_FORMAT = "csv"
-FEED_URI = "./flats_final.csv"
+FEED_FORMAT = "json"
+FEED_URI = "../dane/mieszkania_all.json"
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'RentIT_crawler (+http://www.yourdomain.com)'

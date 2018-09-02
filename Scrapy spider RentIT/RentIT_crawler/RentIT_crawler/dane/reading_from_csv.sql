@@ -1,0 +1,3 @@
+﻿COPY new_raw_input(czynsz,forma_wlasnosci,rok_budowy,rynek,okna,stan_wykonczenia,ogrzewanie,material_budynku,rodzaj_zabudowy,dostepne_od,cena,cena_za_metr,data_aktualizacji,
+data_dodania,informacje_dodatkowe,kategoria,liczba_pieter,liczba_wyswietlen,nr_oferty_na_stronie,nr_oferty_w_biurze_nieruchomosci,opis_finalny,pietro,pokoje,powierzchnia,strona,tytul,wspolrzedne_lat,wspolrzedne_lon,
+zdjecia_1,zdjecia_2,zdjecia_3,zdjecia_4,zdjecia_5,wspolrzedne,dzielnica) from 'C:\Mieszkania\output.csv' with delimiter ',' CSV HEADER ENCODING 'UTF-8';
